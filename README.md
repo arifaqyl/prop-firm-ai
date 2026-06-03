@@ -1,5 +1,16 @@
 # Prop Firm AI Trading System
 
+This repository reflects the current `v4` working state of the project.
+
+The project did not start as `v4`. It evolved through several planning and implementation passes:
+
+- `v1`: analyzer-first concept
+- `v2`: added calibration, structured LLM output, gold-specific macro context, paper journal earlier in the process
+- `v3`: strengthened research gating, `no_edge` behavior, calibration logging, regime simplification, and validation discipline
+- `v4`: current architecture, treating the analyzer as the research brain and wrapping it with risk, execution, monitoring, and audit scaffolding
+
+See [CHANGELOG.md](CHANGELOG.md) for the version flow.
+
 This is a safety-first implementation scaffold for the v4 plan:
 
 - Research analyzer confidence gates
@@ -22,6 +33,38 @@ This public repository is sanitized for open-source sharing:
 - no API keys or local secrets are committed
 - no private deployment scripts are included in version control
 - local/runtime paths in the docs are examples, not required exact paths
+
+## Version Flow
+
+### v1 - Analyzer skeleton
+- single-analyzer direction calls
+- chart/indicator features
+- basic dashboard
+- mostly heuristic reasoning
+
+### v2 - Research quality pass
+- stronger explanation contract
+- calibration emphasis
+- gold/macro-specific additions
+- earlier paper-trade journaling
+
+### v3 - Validation-first analyzer
+- confidence gates
+- `no_edge` as a first-class output
+- better calibration thinking
+- regime classifier simplification
+- explicit refusal behavior when evidence is weak
+
+### v4 - Research brain plus trading body scaffold
+- execution/risk/audit architecture
+- hybrid gate
+- subagent confluence
+- catalyst/news veto
+- macro layer
+- monitor-only microstructure / arbitrage probes
+- paper simulation as the main validation path
+
+Important: the git history starts from the current public-safe snapshot. Earlier versions were part of iterative local work and planning, not preserved as separate public commits.
 
 ## Visual App
 
