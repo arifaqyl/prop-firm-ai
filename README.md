@@ -1,4 +1,4 @@
-# Prop Firm AI Trading System
+# Prop Firm Research Assistant
 
 This repository reflects the current `v4` working state of the project.
 
@@ -191,7 +191,7 @@ ollama serve
 Then start the app:
 
 ```powershell
-cd prop-firm-ai
+cd prop-firm-research-assistant
 .\run-local.ps1
 ```
 
@@ -212,7 +212,7 @@ The repo is now configured for local-first catalyst classification:
 ## Manual Run
 
 ```powershell
-cd prop-firm-ai
+cd prop-firm-research-assistant
 python -m venv .venv
 .\.venv\Scripts\pip install -e .[dev]
 .\.venv\Scripts\uvicorn prop_firm_ai.main:app --reload
@@ -250,7 +250,7 @@ Useful local endpoints:
 The core engine tests use the standard library so they can run before dev dependencies are installed:
 
 ```powershell
-cd prop-firm-ai
+cd prop-firm-research-assistant
 $env:PYTHONPATH='src'
 python -m unittest discover -s tests
 ```
