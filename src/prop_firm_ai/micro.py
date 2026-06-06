@@ -147,7 +147,7 @@ def polymarket_market_search(query: str = "bitcoin", limit: int = 8) -> dict[str
             f"{POLYMARKET_GAMMA_BASE}/events",
             params={"search": requested, "active": "true", "closed": "false", "limit": min(max(limit, 1), 20)},
             timeout=12,
-            headers={"User-Agent": "prop-firm-ai/0.1"},
+            headers={"User-Agent": "prop-firm-research-assistant/0.1"},
         )
         response.raise_for_status()
         events = response.json()

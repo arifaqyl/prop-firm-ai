@@ -57,7 +57,7 @@ def sec_recent_filings(symbol: str, forms: list[str] | None = None, limit: int =
 
 
 def _sec_headers() -> dict[str, str]:
-    user_agent = os.getenv("SEC_USER_AGENT", "prop-firm-ai/0.1 research-bot")
+    user_agent = os.getenv("SEC_USER_AGENT", "prop-firm-research-assistant/0.1 research-bot")
     return {"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate"}
 
 

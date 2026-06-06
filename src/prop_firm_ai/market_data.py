@@ -50,7 +50,7 @@ def fetch_stooq_daily_candles(symbol: str) -> list[Candle]:
         stooq_symbol = f"{symbol}.US"
 
     url = f"https://stooq.com/q/d/l/?s={stooq_symbol}&i=d"
-    response = requests.get(url, timeout=10, headers={"User-Agent": "prop-firm-ai/0.1"})
+    response = requests.get(url, timeout=10, headers={"User-Agent": "prop-firm-research-assistant/0.1"})
     response.raise_for_status()
 
     candles = []
@@ -81,7 +81,7 @@ def fetch_market_snapshot(symbol: str, interval: str = "5m", range_: str = "1d")
             YAHOO_CHART_URL.format(symbol=provider_symbol),
             params={"interval": interval, "range": range_},
             timeout=8,
-            headers={"User-Agent": "prop-firm-ai/0.1"},
+            headers={"User-Agent": "prop-firm-research-assistant/0.1"},
         )
         response.raise_for_status()
         payload = response.json()

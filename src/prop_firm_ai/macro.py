@@ -154,7 +154,7 @@ def options_gex_context(symbol: str = "SPY", max_expirations: int = 2) -> dict[s
 
 def _fetch_yahoo_options(symbol: str, expiration: int | None = None) -> dict[str, Any]:
     params = {"date": expiration} if expiration else None
-    headers = {"User-Agent": "Mozilla/5.0 prop-firm-ai/0.1"}
+    headers = {"User-Agent": "Mozilla/5.0 prop-firm-research-assistant/0.1"}
     response = requests.get(
         YAHOO_OPTIONS_URL.format(symbol=symbol),
         params=params,
@@ -250,7 +250,7 @@ def _black_scholes_gamma(spot: float, strike: float, volatility: float, years_to
 
 
 def _fetch_fred_series(series_id: str, label: str) -> dict[str, Any]:
-    response = requests.get(FRED_CSV_URL, params={"id": series_id}, timeout=10, headers={"User-Agent": "prop-firm-ai/0.1"})
+    response = requests.get(FRED_CSV_URL, params={"id": series_id}, timeout=10, headers={"User-Agent": "prop-firm-research-assistant/0.1"})
     response.raise_for_status()
     return _parse_fred_csv(response.text, series_id, label)
 
@@ -584,7 +584,7 @@ def _fetch_free_news_results(query: str) -> list[dict[str, Any]]:
         FREE_NEWS_RSS_URL,
         params={"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"},
         timeout=10,
-        headers={"User-Agent": "prop-firm-ai/0.1"},
+        headers={"User-Agent": "prop-firm-research-assistant/0.1"},
     )
     response.raise_for_status()
     return _parse_free_news_rss(response.text)

@@ -1,5 +1,5 @@
 [project]
-name = "prop-firm-ai"
+name = "prop-firm-research-assistant"
 version = "0.1.0"
 description = "Safety-first AI trading analyzer, paper execution engine, and prop-style risk scaffold."
 requires-python = ">=3.12"
